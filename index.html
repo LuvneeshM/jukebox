@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jukbox</title>
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<h1 id="title">FILL ME</h1>
+
+	<div id="album_cover"></div>
+	
+	<button  onclick = "Rewind()" >
+		<i class="fa fa-step-backward" aria-hidden="true"></i>
+	</button>
+	<button id = "play_button">
+		<i class="fa fa-play" aria-hidden="true"></i>
+		<audio id="play_audio">
+			<source id="song" src="" type="audio/mpeg">
+		</audio>
+	</button>
+	<button onclick = "Pause()">
+		<i class="fa fa-pause" aria-hidden="true"></i>
+	</button>
+	<button onclick = "FF()">
+		<i class="fa fa-step-forward" aria-hidden="true"></i>
+	</button>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
