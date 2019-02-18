@@ -3,28 +3,104 @@
 <head>
 	<title>Jukbox</title>
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+			#album_cover{
+				display:flex;
+				justify-content: center;
+				padding: 4px;
+				height: 500px;
+			}
+			#album_cover_img{
+				max-height: 90%;
+				padding: 1%;
+				margin-top: auto;
+				margin-bottom: auto;
+				vertical-align: middle;
+			}
+			#album_cover_img_next{
+				max-height: 30%;
+				margin-top: auto;
+				margin-bottom: auto;
+				vertical-align: middle;
+			}
+
+			#song_controls{
+				display:flex;
+				justify-content: center;
+				padding: 4px;
+				height: 100px;
+			}
+			.button_controller{
+				margin-top: 1%;
+				margin-bottom: auto;
+				margin-left: 10px;
+				margin-right: 10px;
+				height: 90px;
+				width: 90px;
+				vertical-align: middle;
+			}
+			
+			#playlist_div{
+				display:flex;
+				justify-content: center;
+			}
+			#playlist,audio{
+				/*background:#666;*/
+				width:400px;
+				padding:20px;
+			}
+			.active {
+				color:#5DB0E6;
+				text-decoration:none;
+			}
+			li{
+				color:#eeeedd;
+				background:#333;
+				padding:5px;
+				display:block;
+				text-align: center;
+			}
+			li:hover{
+				text-decoration:none;
+			}
+	</style>
 </head>
 <body>
 
-	<h1 id="title">FILL ME</h1>
+	<h1 id="title" align="center">FILL ME</h1>
 
-	<div id="album_cover"></div>
+	<div id="album_cover">
+		<img id="album_cover_img"  src="">
+		<img id="album_cover_img_next"  src="">
+
+	</div>
 	
-	<button  onclick = "Rewind()" >
-		<i class="fa fa-step-backward" aria-hidden="true"></i>
-	</button>
-	<button id = "play_button">
-		<i class="fa fa-play" aria-hidden="true"></i>
-		<audio id="play_audio">
-			<source id="song" src="" type="audio/mpeg">
-		</audio>
-	</button>
-	<button onclick = "Pause()">
-		<i class="fa fa-pause" aria-hidden="true"></i>
-	</button>
-	<button onclick = "FF()">
-		<i class="fa fa-step-forward" aria-hidden="true"></i>
-	</button>
+	<div id="song_controls">
+		<button class=button_controller onclick = "Rewind()" >
+			<i class="fa fa-step-backward" aria-hidden="true"></i>
+		</button>
+		<button class=button_controller onclick="Play()">
+			<i class="fa fa-play" aria-hidden="true"></i>
+			<audio id="play_audio">
+				<source id="song" src="" type="audio/mpeg">
+			</audio>
+		</button>
+		<button class=button_controller onclick = "Pause()">
+			<i class="fa fa-pause" aria-hidden="true"></i>
+		</button>
+		<button class=button_controller onclick = "FF()">
+			<i class="fa fa-step-forward" aria-hidden="true"></i>
+		</button>
+		<button class=button_controller onclick = "randomSong()">
+			<i class="fa fa-random" aria-hidden="true"></i>
+		</button>
+	</div>
+
+	<div id="playlist_div">
+		<ul id="playlist">
+			
+		</ul>
+	</div>
 
 	<script type="text/javascript" src="script.js"></script>
 </body>
